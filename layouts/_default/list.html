@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <h1 class="title">Blog</h1>
+    <h2 class="subtitle">Pensées d'un dev</h2>
+    <div class="content">
+        {{ range .Pages }}
+        <div class="post-inner">
+            <div class="date">
+                {{.Date.Format "02-01-2006"}}
+            </div>
+            <div class="title">
+                <a href="{{.Permalink}}">{{.Title}}</a> 
+            </div>
+        </div>
+        {{ end }}
+    </div>
+{{ end }}

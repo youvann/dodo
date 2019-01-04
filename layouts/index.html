@@ -1,0 +1,27 @@
+{{ define "body" }}
+<body class="dracula-bg">
+    <div class="homepage-content">
+    <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+    <!-- {{.Content}} -->
+<pre class="content"><span class="yaml_directive">%youvann 0.1</span>
+<span class="yaml_doc_sep">---</span>
+<span class="yaml_key">about</span><span class="yaml_key_sep">:</span>
+    <span class="yaml_key">name</span><span class="yaml_key_sep">:</span> Kevin Meas
+    <span class="yaml_key">bio</span><span class="yaml_key_sep">:</span> Software developer
+    <span class="yaml_key">location</span><span class="yaml_key_sep">:</span> France
+    <span class="yaml_key">company</span><span class="yaml_key_sep">:</span> Linxo (<a href="https://www.linxo.com/">https://www.linxo.com/</a>)
+    <span class="yaml_key">blog</span><span class="yaml_key_sep">:</span> coming soon (<a href="{{ .Site.BaseURL }}/blog">https://youvann.github.io/blog</a>) <span class="yaml_comment"># FR</a></span>
+    <span class="yaml_key">github</span><span class="yaml_key_sep">:</span> youvann
+    <span class="yaml_key">twitter</span><span class="yaml_key_sep">:</span> @_youvann
+    <span class="yaml_key">keybase</span><span class="yaml_key_sep">:</span> B8C7 B6FD CFCE E2AD (<a href="https://keybase.io/youvann">https://keybase.io/youvann</a>)</span>
+<span class="yaml_doc_sep">...</span>
+</pre>
+    </div>
+    <div>
+    <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
+    {{ range first 10 .Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+    </div>
+</body>
+{{ end }}

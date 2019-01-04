@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    {{ block "body" . }}
+        <body>
+            <div id="grid">
+                {{ partial "header.html" . }}
+                <main>
+                    {{ block "main" . }}{{ end }}
+                </main>
+                {{ partial "footer.html" . }}
+            </div>
+        </body>
+    {{ end }}
+    <script src="{{ "js/highlight.pack.js" | relURL }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</html>
